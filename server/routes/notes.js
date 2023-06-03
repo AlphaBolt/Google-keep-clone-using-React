@@ -36,7 +36,9 @@ router.get('/', (req, res) => {
 // Delete a note
 router.delete('/:id', (req, res) => {
   const { id } = req.params;
-  Note.findByIdAndRemove(id).then(function(){
+  console.log("id in notes: ",id);
+  Note.findByIdAndRemove(id)
+.then(function(){
     res.status(200).send('Note deleted successfully');
   })
   .catch((error) => {

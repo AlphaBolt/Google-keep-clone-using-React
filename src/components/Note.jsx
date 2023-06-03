@@ -3,6 +3,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 function Note(props) {
   function handleClick() {
+    console.log("id: ",props.id);
     props.onDelete(props.id);
   }
 

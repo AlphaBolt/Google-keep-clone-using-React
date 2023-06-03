@@ -55,7 +55,9 @@ function App(){
       // });
 
       // chatGPT part:
-      axios.delete("http://localhost:5000/api/notes/${id}")
+      console.log("id in App: ",id);
+      const deleteId = "http://localhost:5000/api/notes/" + id;
+      axios.delete(deleteId)
       .then((response) => {
         console.log(response.data);
         fetchData();
