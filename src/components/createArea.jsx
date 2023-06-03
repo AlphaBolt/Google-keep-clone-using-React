@@ -17,7 +17,7 @@ function CreateArea(props) {
     }
 
     function handleChange(event) {
-        const { name , value} = event.target;
+        const { name , value } = event.target;
 
         setNote(prevNote => {
             return{
@@ -39,7 +39,7 @@ function CreateArea(props) {
 
     return (
       <div>
-        <form className="create-note" action="/" method="post">
+        <form className="create-note">
           {isExpanded && (
             <input
               name="title"
