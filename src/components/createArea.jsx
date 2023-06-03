@@ -28,12 +28,19 @@ function CreateArea(props) {
     }
 
     function submitNote(event){
+      event.preventDefault();
+      
+      // Adding this to tell the user that their content is empty:
+      if (!note.content) {
+        alert("Please enter some content.");
+        return;
+      }
+
         props.onAdd(note);
         setNote({
             title: "",
             content: ""
         });
-        event.preventDefault();
 
     }
 
