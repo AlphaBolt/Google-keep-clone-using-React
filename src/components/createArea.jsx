@@ -22,26 +22,27 @@ function CreateArea(props) {
         setNote(prevNote => {
             return{
                 ...prevNote,
-                [name]: value
+                [name]: value,
+                keyForSort: Date.now()
+                // We add the above line so that the DB has one more value which stores current date
             };
         }); 
     }
 
     function submitNote(event){
       event.preventDefault();
-      
+
       // Adding this to tell the user that their content is empty:
       if (!note.content) {
         alert("Please enter some content.");
         return;
       }
 
-        props.onAdd(note);
-        setNote({
-            title: "",
-            content: ""
-        });
-
+      props.onAdd(note);
+      setNote({
+        title: "",
+        content: "",
+      });
     }
 
     return (

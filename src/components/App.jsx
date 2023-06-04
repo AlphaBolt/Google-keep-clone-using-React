@@ -3,9 +3,6 @@ import Header from "./Header";
 import Note from "./Note";
 import CreateArea from "./createArea";
 import Footer from "./Footer";
-// eslint-disable-next-line
-// import {createNote, readNotes} from "../server";
-
 import axios from "axios";
 
 function App(){
@@ -37,7 +34,7 @@ function App(){
       fetchData();
     }, []);
 
-    function fetchData(){
+    async function fetchData(){
       axios.get('http://localhost:5000/api/notes')
       .then((response) => {
         setNotes(response.data);
@@ -55,7 +52,6 @@ function App(){
       // });
 
       // chatGPT part:
-      console.log("id in App: ",id);
       const deleteId = "http://localhost:5000/api/notes/" + id;
       axios.delete(deleteId)
       .then((response) => {

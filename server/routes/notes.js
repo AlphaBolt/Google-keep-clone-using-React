@@ -5,12 +5,16 @@ const Note = require('../models/note');
 
 // Create a new note
 router.post('/', (req, res) => {
-  const { title, content } = req.body;
+  const { title, content, keyForSort } = req.body;
+  
   // Create a new Note instance
   const newNote = new Note({
     title,
     content,
+    keyForSort
+    // Its data is being passed from createArea.jsx
   });
+
   // Save the new note to the database
   newNote.save()
     .then((savedNote) => {
@@ -23,9 +27,10 @@ router.post('/', (req, res) => {
 
 // GET route to retrieve all notes
 router.get('/', (req, res) => {
-  Note.find()
+  Note.find().sort({keyForSort:-1})   // This will sort the notes in descending order of their dates created
     .then((notes) => {
       res.json(notes);
+      console.log(notes);
     })
     .catch((error) => {
       res.status(500).json({ error: 'An error occurred while retrieving the notes' });
