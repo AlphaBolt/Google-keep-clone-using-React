@@ -11,7 +11,8 @@ app.use(cors());
 main().catch(err => console.log(err));
      
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/keeperDB");
+  // await mongoose.connect("mongodb://127.0.0.1:27017/keeperDB");
+  await mongoose.connect("mongodb+srv://alphabolt03:63eLLKEm4tmrCC0P@cluster0.2hdmcvy.mongodb.net/keeperDB");
   console.log("Database connected!");
 }
 
