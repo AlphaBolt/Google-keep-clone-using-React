@@ -18,7 +18,7 @@ function App(){
       // });
 
       // chatGPT part:
-      axios.post('http://localhost:5000/api/notes', newNote)
+      axios.post('https://localhost:5000/api/notes', newNote)
       .then((response) => {
         console.log(response.data);
         fetchData();
@@ -35,7 +35,7 @@ function App(){
     }, []);
 
     async function fetchData(){
-      axios.get('http://localhost:5000/api/notes')
+      axios.get('https://localhost:5000/api/notes')
       .then((response) => {
         setNotes(response.data);
       })
@@ -52,7 +52,7 @@ function App(){
       // });
 
       // chatGPT part:
-      const deleteId = "http://localhost:5000/api/notes/" + id;
+      const deleteId = "https://localhost:5000/api/notes/" + id;
       axios.delete(deleteId)
       .then((response) => {
         console.log(response.data);
