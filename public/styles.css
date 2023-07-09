@@ -27,6 +27,7 @@ header h1 {
 }
 
 footer {
+  background: #eee;
   position: absolute;
   text-align: center;
   bottom: 0;
