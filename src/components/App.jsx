@@ -18,7 +18,12 @@ function App(){
       // });
 
       // chatGPT part:
-      axios.post('https://localhost:5000/api/notes', newNote)
+
+      // This code was for local host:
+      // axios.post('https://localhost:5000/api/notes', newNote)
+
+      // This is where the web service is now hosted in cyclic:
+      axios.post('https://note-taking-app-api-a3ys.onrender.com/api/notes', newNote)
       .then((response) => {
         console.log(response.data);
         fetchData();
@@ -35,7 +40,12 @@ function App(){
     }, []);
 
     async function fetchData(){
-      axios.get('https://localhost:5000/api/notes')
+
+      // This code was for local host:
+      // axios.get('https://localhost:5000/api/notes')
+
+      // This is where the web service is now hosted in cyclic:
+      axios.get('https://note-taking-app-api-a3ys.onrender.com/api/notes')
       .then((response) => {
         setNotes(response.data);
       })
@@ -51,8 +61,11 @@ function App(){
       //   });
       // });
 
-      // chatGPT part:
-      const deleteId = "https://localhost:5000/api/notes/" + id;
+      // This code was for local host:
+      // const deleteId = "https://localhost:5000/api/notes/" + id;
+
+      // This is where the web service is now hosted in cyclic:
+      const deleteId = "https://note-taking-app-api-a3ys.onrender.com/api/notes/" + id;
       axios.delete(deleteId)
       .then((response) => {
         console.log(response.data);
