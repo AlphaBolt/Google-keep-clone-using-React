@@ -3,19 +3,25 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 html {
   font-family: "Montserrat", sans-serif;
+  font-size: 14px;
 }
+
 body {
   background: #eee;
   /* background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); */
   background-image: url("https://www.transparenttextures.com/patterns/argyle.png");
-  padding: 0 16px;
+  /* height: 85vh; */
+  /* padding: 0; */
 }
 
 header {
   background-color: #f5ba13;
-  margin: auto -16px;
+  /* margin: auto -16px; */
+  /* height: 80px;
+  width: 100%; */
   padding: 16px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
@@ -24,6 +30,7 @@ header h1 {
   color: #fff;
   font-family: "McLaren", cursive;
   font-weight: 200;
+  font-size: 2rem;
 }
 
 footer {
@@ -36,8 +43,9 @@ footer {
 }
 
 footer p {
-  color: #ccc;
+  color: #012;
 }
+
 .note {
   background: #fff;
   border-radius: 7px;
@@ -47,12 +55,16 @@ footer p {
   margin: 16px;
   float: left;
 }
+
 .note h1 {
   font-size: 1.1em;
+  /* font-size: calc(0.5rem + 0.5vw); */
   margin-bottom: 6px;
 }
+
 .note p {
   font-size: 1.1em;
+  /* font-size: calc(0.4rem + 0.4vw); */
   margin-bottom: 10px;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -70,22 +82,24 @@ footer p {
   outline: none;
 }
 
+/* Input Box: */
 form.create-note {
   position: relative;
-  width: 480px;
+  width: 450px;
   margin: 30px auto 20px auto;
   background: #fff;
   padding: 15px;
   border-radius: 7px;
   box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
+
 form.create-note input,
 form.create-note textarea {
   width: 100%;
   border: none;
   padding: 4px;
   outline: none;
-  font-size: 1.2em;
+  font-size: 1.5rem;
   font-family: inherit;
   resize: none;
 }
@@ -102,4 +116,31 @@ form.create-note button {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
+}
+
+/* Media Queries for text input: */
+@media (max-width: 480px){
+  
+  form.create-note {
+    width: 90vw;
+  }
+  header h1{
+    font-size: 2.5rem;
+  }
+  
+}
+
+/* Media Queries for notes: */
+@media (max-width: 544px){
+  
+  .note{
+    width: 90vw;
+  }
+  .note h1 {
+    font-size: 2rem;
+  }
+  .note p {
+    font-size: 2rem;
+  }
+
 }
